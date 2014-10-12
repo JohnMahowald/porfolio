@@ -1,17 +1,8 @@
 <h1>Hello World</h1>
 <button class='btn btn-primary'>Button</button>
 
-
-
-<% Project.all.each do |p| %>
-  <div class='project'>
-    <h2><%= p.title %></h2>
-    <ul>
-      <li>Description: <%= p.description %></li>
-      <li><a href="<%= p.github_url %>">Github</a></li>
-      <% if p.demo_url %>
-        <li><a hfef="<%= p.demo_url %>">Demo</a></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<div id="projects">
+  <% Project.all.each do |p| %>
+    <%= render "project", project: p %>
+  <% end %>
+</div>

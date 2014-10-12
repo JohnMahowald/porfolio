@@ -1,0 +1,15 @@
+<h2><%= project.title %></h2>
+
+<ul>
+  <li><strong>Description:</strong> <%= project.description %></li>
+  <li><strong>Features:</strong>
+    <ul>
+      <% project.features.each do |f| %>
+        <li><%= f.description %></li>
+      <% end %>
+    </ul>
+  <li><a href="<%= project.github_url %>">Github</a></li>
+  <% if project.demo_url %>
+    <li><a hfef="<%= project.demo_url %>">Demo</a></li>
+  <% end %>
+</ul>
