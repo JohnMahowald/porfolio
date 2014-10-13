@@ -17,11 +17,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$font-stack: helvetica, arial, sans-serif;
+$main-grey: #3D3D3D;
+$main-grey-hover: #808080;
+$main-red: #AE6262;
+$main-red-hover: #8B4E4E;
+
+
 /* Sidebar Styling */
 
-body {
-/*  padding-top: 51px;*/
-}
 .text-center {
   padding-top: 20px;
 }
@@ -38,9 +42,26 @@ body {
 #sidebar .nav {
   width: 95%;
 }
-#sidebar li {
-  border:0 #f2f2f2 solid;
-  border-bottom-width:1px;
+#sidebar .nav>li {
+  font-family: $font-stack;
+}
+
+#sidebar .nav>li>a {
+  font-size: 2em;
+  color: $main-grey;
+  transition: all .4s;
+  border-radius: 3px;
+}
+
+#sidebar .nav>li>a:hover {
+  background-color: #cacaca;
+  opacity: .8;
+}
+
+#sidebar .sub-menu>li>a {
+  margin-left: 20px;
+  font-size: 1.5em;
+  color: #333333;
 }
 
 #sidebar.fixed {
@@ -58,6 +79,27 @@ body {
 
 #main-content {
   float: right;
+}
+
+.profile-img-wrapper {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.profile-img {
+  height: 200px;
+}
+
+.sidebar-title {
+  text-align: center;
+  color: white;
+  font-family: $font-stack;
+  font-size: 2.5em;
+  opacity: .8;
+  margin-top: -5px;
+  margin-bottom: 10px;
 }
 
 /* collapsed sidebar styles */
@@ -126,39 +168,205 @@ body {
   }
 }
 
-/* Main Styling */
+/* Section Styling */
 
 h1 {
   margin: 0;
-}
-.sub-menu {
-  margin-left: 20px;
-}
-
-.sticky {
-  position: fixed;
-}
-
-.main-content h1 {
-  text-align: center;
-}
-
-.section-card h2 {
-  text-align: center;
 }
 
 .main-section {
   width: 100%;
 }
 
-.main-section h1 {
-  text-align: center;
-}
-
-.title-wrapper {
-  text-align: center;
-}
-
 .main-nav-wrapper {
+  padding-top: 0;
+}
+
+.section {
+  height: 200px;
+}
+
+.section-title {
+  background-color: $main-grey;
+  padding: 15px;
+  color: $main-red;
+  opacity: .7;
+  margin: auto -15px;
+  margin-bottom: 10px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+/* Landing Section */
+
+
+.title-wrapper>h1 {
   text-align: center;
+}
+
+.title-wrapper>h1>a {
+  font-size: 3em;
+  color: $main-grey;
+  opacity: .9;
+  transition: color .6s;
+  text-decoration: none;
+}
+
+.title-wrapper>h1>a:hover {
+  color: $main-grey-hover;
+}
+
+.title-wrapper>h2 {
+  font-size: 3em;
+  color: $main-red;
+  opacity: .7;
+  transition: color .3s;
+  text-align: center;
+}
+
+.title-wrapper>h2:hover {
+  color: $main-red-hover;
+}
+
+.main-nav-down {
+  font-size: 3em;
+  text-align: center;
+}
+
+.main-nav-down a {
+  color: $main-grey;
+  transition: color .3s;
+}
+
+.main-nav-down a:hover {
+  color: $main-grey-hover;
+}
+
+#title {
+  background-image: url('https://s3-us-west-1.amazonaws.com/mahowald-portfolio-development/golden-gate.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#title .fader {
+  height: 100%;
+  width: 100%;
+  background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.43) 43%, rgba(255,255,255,1) 99%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(43%,rgba(255,255,255,0.43)), color-stop(99%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.43) 43%,rgba(255,255,255,1) 99%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.43) 43%,rgba(255,255,255,1) 99%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.43) 43%,rgba(255,255,255,1) 99%,rgba(255,255,255,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.43) 43%,rgba(255,255,255,1) 99%,rgba(255,255,255,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
+
+/* Projects */
+
+.project-title>h1 {
+  text-align: center;
+  margin: 30px auto;
+}
+
+.section-card {
+  position: relative;
+  border: 1px solid #cacaca;
+  border-radius: 3px;
+}
+
+.section-card-header {
+  position: absolute;
+  height: 10%;
+  width: 100%;
+  background-color: #cacaca;
+  padding: 10px;
+}
+
+.section-card-header>h2 {
+  margin: 0;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.section-card-body {
+  position: absolute;
+  top: 10%;
+  height: 80%;
+  width: 100%;
+  padding: 10px;
+  overflow-y: auto;
+  background-color: #F8F8F8;
+}
+
+.section-card-body .description {
+  font-style: italic;
+  padding: 10px;
+  font-size: 1.1em;
+  text-align: center;
+}
+
+.section-card-body .features>h3 {
+  margin: 0;
+  text-align: center;
+  font-size: 1.2em ;
+  margin-bottom: 10px;
+}
+
+.section-card-body .features>ul {
+  list-style: none;
+}
+
+.section-card-body .features>ul>li {
+  margin-bottom: 10px;
+}
+
+.section-card-footer {
+  position: absolute;
+  height: 10%;
+  width: 100%;
+  bottom: 0;
+  background-color: #cacaca;
+  text-align: center;
+  padding: 7px;
+}
+
+.section-card-footer>span {
+  font-style: italic;
+  font-size: 1em;
+  padding-right: 18px;
+  display: inline-block;
+  padding-top: 5px;
+}
+
+.section-card-footer .my-btn {
+  height: 100%;
+  width: 50%;
+  margin-right: 20px;
+  border: none;
+  border-radius: 4px;
+  display: inline-block;
+  width: 40%;
+  color: white;
+  background-color: #428bca;
+/*  background-color: #3071a9;*/
+}
+
+.sidebar-footer {
+  position: absolute;
+  bottom: 0;
+}
+
+#sidebar-icons {
+  list-style: none;
+  font-size: 2em;
+}
+
+.sidebar-icon {
+  height: 70px;
+  width: 70px;
+  opacity: .6;
+  transition: opacity .6s;
+}
+
+.sidebar-icon:hover {
+  opacity: .8;
 }

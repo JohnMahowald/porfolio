@@ -1,20 +1,61 @@
-<div class='col-md-6 col-xs-12'>
-  <div class='section-card'>
-    <h2><%= project.title %></h2>
+<div class='project-title'>
+  <h1><%= project.title %></h1>
+</div>
 
-    <ul>
-      <li><strong>Description:</strong> <%= project.description %></li>
-      <li><strong>Features:</strong>
-        <ul>
-          <% project.features.each do |f| %>
-            <li><%= f.description %></li>
+<div class='container-fluid'>
+  <div class="row">
+    <!-- about section -->
+    <div class='col-md-6 col-xs-12'>
+      <div class='section-card'>
+        <div class='section-card-header'>
+          <h2>About</h2>
+        </div>
+        
+        <div class='section-card-body'>
+          <div class='description'>
+            <%= project.description %>
+          </div>
+          
+          <div class='features'>
+            <h3>Features:</h3>
+            <ul>
+              <% project.features.each do |f| %>
+                <li><%= f.description %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+        
+        <div class='section-card-footer'>
+          <% project.skills.each do |s| %>
+            <span class='skill'><%= s.title %></span>
           <% end %>
-        </ul>
-      </li>
-      <li><a href="<%= project.github_url %>">Github</a></li>
-      <% if project.demo_url %>
-        <li><a hfef="<%= project.demo_url %>">Demo</a></li>
-      <% end %>
-    </ul>
+        </div>
+      </div><!-- /section-card -->
+    </div><!-- /about section -->
+      
+    <!-- preview section -->
+    <div class='col-md-6 col-xs-12'>
+      <div class='section-card'>
+        <div class='section-card-header'>
+          <h2>Preview</h2>
+        </div>
+        
+        <div class='section-card-body'>
+        </div>
+        
+        <div class='section-card-footer'>
+          <a href='<%= project.github_url %>' target='_blank'>
+            <button class='my-btn'>GitHub</button>
+          </a>
+          <% if project.demo_url %>
+            <a href='<%= project.demo_url %>' target='_blank'>
+              <button class='my-btn'>Demo</button>
+            </a>
+          <% end %>
+        </div>
+      </div>
+    </div>
+      
   </div>
 </div>
