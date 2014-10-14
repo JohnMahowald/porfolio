@@ -68,6 +68,7 @@ saidit = Project.create!(
   title: "Saidit",
   description: "A clone of Reddit posting user comments as recursive subviews",
   github_url: "http://github.com/JohnMahowald/saidit",
+  demo_url:"http://saidit-reddit.herokuapp.com",
   preview_img: "/assets/saidit-preview.png"
 )
 
