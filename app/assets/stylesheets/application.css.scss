@@ -127,7 +127,8 @@ body {
   height: 100%;
   padding-right: 0;
   padding-top: 20px;
-  background-color: #ae6262;
+  background-color: $main-grey;
+/*  background-color: #ae6262;*/
 }
 #sidebar .nav {
   width: 95%;
@@ -138,7 +139,8 @@ body {
 
 #sidebar .nav>li>a {
   font-size: 1.7em;
-  color: $main-grey;
+/*  color: $main-grey;*/
+  color: white;
   transition: all .4s;
   border-radius: 3px;
 }
@@ -218,6 +220,10 @@ body {
   margin-top: -10px;
   margin-bottom: 10px;
   font-variant: small-caps;
+}
+
+.sidebar-title .no-link {
+  color: white;
 }
 
 .sidebar-navigation {
