@@ -1,0 +1,9 @@
+<p class='skills-list'>
+  <% Skill.uniq_skills.each_with_index do |skill, i| %>
+    <% if i % 2 == 0 %>
+      <%= skill.title %>
+    <% else %>
+      <span class='odd-skill'><%= skill.title %></span>
+    <% end %>
+  <% end %>
+</p>

@@ -11,8 +11,9 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap-sprockets
 //= require jquery.scrollTo.min
-// require jquery.sticky
+//= require lightbox.min
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
@@ -36,8 +37,7 @@ $(document).ready(function() {
     $('.title-wrapper').css('padding-top', $window.height() / 3);
     $('.main-nav-wrapper').css('padding-top', $window.height() / 4);
     $('#sidebar').css('height', $window.height());
-    
-    $('.section-card').css('height', $window.height() / 1.5);
+    $('.section-card').css('height', $window.height() / 1.7);
   }
   
   setDimensions();
@@ -76,5 +76,12 @@ $(document).ready(function() {
     
   }
   /* Section Title Headers */
-  $(".section-title").slice(1).css("margin-top", '20px');
+  $(".section-title").slice(1).css("margin-top", '10px');
+  
+  /* ToolTips */
+  $('#travel-link').mouseover( function() {
+    $('#travel-link').tooltip('toggle');
+  });
+  
+  /* Lightbox Preview */
 });

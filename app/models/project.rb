@@ -5,8 +5,8 @@
 #  id          :integer          not null, primary key
 #  title       :string(255)      not null
 #  github_url  :string(255)      not null
-#  demo_url    :string(255)      not null
 #  description :string(255)      not null
+#  demo_url    :string(255)
 #  created_at  :datetime
 #  updated_at  :datetime
 #

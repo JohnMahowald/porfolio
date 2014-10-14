@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141012045124) do
+ActiveRecord::Schema.define(version: 20141014184818) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "contacts", force: true do |t|
+    t.string   "data",       null: false
+    t.string   "icon_url",   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "contacts", ["data"], name: "index_contacts_on_data", using: :btree
 
   create_table "features", force: true do |t|
     t.string   "description", null: false
@@ -30,6 +39,7 @@ ActiveRecord::Schema.define(version: 20141012045124) do
     t.string   "demo_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "preview_img"
   end
 
   create_table "skills", force: true do |t|
@@ -37,6 +47,7 @@ ActiveRecord::Schema.define(version: 20141012045124) do
     t.integer  "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "ord"
   end
 
 end
