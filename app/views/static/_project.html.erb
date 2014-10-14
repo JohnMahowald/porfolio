@@ -1,4 +1,5 @@
-<div id='<%= project.title.split(" ").join("_").downcase %>'>
+<% project_tag = project.title.split(" ").join("_").downcase %>
+<div id='<%= project_tag %>'>
   <div class='project-title'>
     <h1><%= project.title %></h1>
   </div>
@@ -43,7 +44,7 @@
           </div>
         
           <div class='section-card-body'>
-            <a href='/assets/landing.png' data-lightbox='landing'>
+            <a href='<%= project.preview_img %>' data-lightbox='<%= project_tag %>'>
               <div 
                class='project-preview' 
                style='background-image: url(<%= project.preview_img %>);'></div>
