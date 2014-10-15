@@ -15,6 +15,9 @@
 //= require jquery.scrollTo.min
 //= require lightbox.min
 //= require jquery_ujs
+//= require set-dimensions
+//= require fixed-sidebar
+//= require scroll
 //= require turbolinks
 //= require_tree .
 
@@ -29,59 +32,12 @@ $(document).ready(function() {
     $('#projects-sub').toggle('collapse');
   });
   
-  /* Window Resizing */
-  var setDimensions = function() {
-    var sidebarTop = $('#sidebar').offset().top;
-    $('.main-section').css('min-height', $window.height());
-    $('#title').css('height', $window.height());
-    $('.title-wrapper').css('padding-top', $window.height() / 3);
-    $('.main-nav-wrapper').css('padding-top', $window.height() / 4);
-    $('#sidebar').css('height', $window.height());
-    $('.section-card').css('height', $window.height() / 1.7);
-  }
-  
-  setDimensions();
-  
-  window.onresize = function() { setDimensions() };
-  
-  /* Fixed Sidebar Menu Settings */
-  var sidebarTop = $('#sidebar').offset().top
-  
-  function stickySidebar () {
-    var scrollTop = $(window).scrollTop();
-    
-    if (scrollTop > sidebarTop) {
-      $('#sidebar').addClass('fixed');
-    } else {
-      $('#sidebar').removeClass('fixed');
-    }
-  };
-  
-  stickySidebar();
-  
-  $(window).scroll(function() {
-    stickySidebar()
-  })
-  
-  /* Scrolling */
-  $('a').click( function(e) {
-    var target = $(e.currentTarget).data('link-target')
-    if (target) { $(window).scrollTo(target, 800) };
-  })
-  
-  /* Sticky Section Title */
-  var mainSectionTop = $('main-section');
-  
-  function sticktyTitle () {
-    
-  }
-  /* Section Title Headers */
+  /* Section Title Headers
+     set height for all but the first section title */
   $(".section-title").slice(1).css("margin-top", '10px');
   
   /* ToolTips */
   $('#travel-link').mouseover( function() {
     $('#travel-link').tooltip('toggle');
   });
-  
-  /* Lightbox Preview */
 });
