@@ -13,11 +13,12 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery.scrollTo.min
-//= require lightbox.min
+// require lightbox.min
 //= require jquery_ujs
 //= require set-dimensions
 //= require fixed-sidebar
 //= require scroll
+//= require set-menu
 //= require turbolinks
 //= require_tree .
 

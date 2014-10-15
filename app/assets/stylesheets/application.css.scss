@@ -12,7 +12,7 @@
  *
  *= require_tree .
  *= require_self
- *= require lightbox
+ * require lightbox
  *= require animate
  */
 
@@ -141,6 +141,7 @@ body {
   color: white;
   opacity: .8;
   transition: all .4s;
+  transition: font-size .3s;
   border-radius: 3px;
 }
 
@@ -148,9 +149,19 @@ body {
   background: linear-gradient(#808080, #5B5B5B);
 }
 
+#sidebar .nav>li>a.active {
+  margin-left: 10px;
+  font-size: 1.9em;
+}
+
 #sidebar .sub-menu>li>a {
   margin-left: 20px;
   font-size: 1.2em;
+}
+
+#sidebar .sub-menu>li>a.active {
+  margin-left: 20px;
+  font-size: 1.5em;
 }
 
 #sidebar .sub-menu>li>a {

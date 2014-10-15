@@ -1,5 +1,6 @@
 <% project_tag = project.title.split(" ").join("_").downcase %>
-<div id='<%= project_tag %>'>
+
+<div class='project-wrapper' id='<%= project_tag %>'>
   <div class='project-title'>
     <h1><%= project.title %></h1>
   </div>
@@ -44,7 +45,9 @@
           </div>
         
           <div class='section-card-body'>
-            <a href='<%= project.preview_img %>' data-lightbox='<%= project_tag %>'>
+            <% url = project.demo_url ? project.demo_url : project.github_url %>
+            
+            <a href='<%= url %>' target='_blank'>
               <div 
                class='project-preview' 
                style='background-image: url(<%= project.preview_img %>);'></div>

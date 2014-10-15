@@ -12,7 +12,7 @@ $(document).ready( function() {
   };
 
   stickySidebar();
-
+  
   $(window).scroll(function() {
     stickySidebar()
   })

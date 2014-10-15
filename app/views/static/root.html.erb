@@ -15,8 +15,8 @@
     
     <!-- main content -->
     <div class="col-xs-12 col-sm-9" id='main-content'>
-      <div class='main-section' id='projects'>
-        <div class='section-title'>
+      <div class='section' id='projects'>
+        <div class='section-title' data-my-section='projects'>
           <h1>Projects</h1>
         </div>
         <% Project.all.each do |p| %>
@@ -25,7 +25,7 @@
       </div>
       
       <div class='section' id='skills'>
-        <div class='section-title'>
+        <div class='section-title' data-my-section='skills'>
           <h1>Skills</h1>
         </div>
         
@@ -35,7 +35,7 @@
       </div>
       
       <div class='about-section' id='about'>
-        <div class='section-title'>
+        <div class='section-title' data-my-section='about'>
           <h1>About</h1>
         </div>
         
@@ -45,7 +45,7 @@
       </div>
       
       <div class='contact-section' id='contact'>
-        <div class='section-title'>
+        <div class='section-title' data-my-section='contact'>
           <h1>Contact</h1>
         </div>
         
