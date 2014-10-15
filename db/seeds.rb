@@ -40,7 +40,7 @@ annotate.features.create!(description: "Creates an Animated View class to manage
 ros = Project.create!(
   title: "Ruby on Sails",
   description: "Metaprogramming exercise in reproducing active records management of
-  database relations and the key features of Rails controller::base & router",
+  database relations and the key features of Rails controller, router, and server",
   github_url: "http://github.com/JohnMahowald/ruby-on-sails",
   preview_img: "/assets/active-preview.png"
 )
