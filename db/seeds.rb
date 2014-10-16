@@ -55,7 +55,8 @@ node = Project.create!(
   title: "Node Chat Room",
   description: "Uses Socket.IO to build a connection between client and server",
   github_url: "http://github.com/JohnMahowald/node-chat-room",
-  preview_img: "/assets/node-preview.png"
+  preview_img: "/assets/node-preview.png",
+  demo_url: "http://connect-your-world.herokuapp.com/"
 )
 
 node.skills.create!(title: 'JavaScript')
