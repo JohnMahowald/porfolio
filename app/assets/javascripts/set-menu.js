@@ -29,10 +29,13 @@ $(document).ready( function() {
         $projectSubMenu.collapse('hide')
       };
       
-      if (section !== currentSection) {
-        $(el).removeClass('active');
-      } else {
+      if (($window.height() + $window.scrollTop()) > $(document).height() - 1) {
+        $('[data-link-target="#about"]').removeClass('active')
+        $('[data-link-target="#contact"]').addClass('active')
+      } else if (section === currentSection) {
         $(el).addClass('active')
+      } else {
+        $(el).removeClass('active');
       }
     });
         
@@ -60,13 +63,6 @@ $(document).ready( function() {
           $el.removeClass('active')
         }
       })
-    }
-    
-    
-    
-    if (($window.height() + $window.scrollTop()) > $(document).height() - 1) {
-      $('[data-link-target="#about"]').removeClass('active')      
-      $('[data-link-target="#contact"]').addClass('active')
     }
   };
   
