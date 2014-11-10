@@ -13,12 +13,19 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery.scrollTo.min
-// require lightbox.min
 //= require jquery_ujs
 //= require set-dimensions
 //= require fixed-sidebar
 //= require scroll
 //= require set-menu
+//= require asteroids/keymaster
+//= require asteroids/utils
+//= require asteroids/movingObject
+//= require asteroids/asteroid
+//= require asteroids/ships
+//= require asteroids/game
+//= require asteroids/bullet
+//= require asteroids/gameView
 //= require turbolinks
 //= require_tree .
 

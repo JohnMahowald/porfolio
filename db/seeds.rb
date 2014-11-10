@@ -65,16 +65,16 @@ node.skills.create!(title: 'Node.js')
 node.features.create!(description: "App launches a server establishing a connection to the client via an HTTP socket connection.")
 node.features.create!(description: "Client and server have unique parse methods for transmitting client messages from the client to the chatroom via the server.")
 
-saidit = Project.create!(
-  title: "Saidit",
-  description: "A clone of Reddit posting user comments as recursive subviews",
-  github_url: "http://github.com/JohnMahowald/saidit",
-  demo_url:"http://saidit-reddit.herokuapp.com",
-  preview_img: "/assets/saidit-preview.png"
-)
-
-saidit.skills.create!(title: "Ruby on Rails")
-saidit.skills.create!(title: "Recursive Partials")
-
-saidit.features.create!(description: "Recursive rendering of child comments by mapping comment views in a hash to their parent node.")
-saidit.features.create!(description: "Generously segmented views keep code DRY allowing login to share boilerplate form data and comments to be recursively rendered within parent.")
+# saidit = Project.create!(
+#   title: "Saidit",
+#   description: "A clone of Reddit posting user comments as recursive subviews",
+#   github_url: "http://github.com/JohnMahowald/saidit",
+#   demo_url:"http://saidit-reddit.herokuapp.com",
+#   preview_img: "/assets/saidit-preview.png"
+# )
+#
+# saidit.skills.create!(title: "Ruby on Rails")
+# saidit.skills.create!(title: "Recursive Partials")
+#
+# saidit.features.create!(description: "Recursive rendering of child comments by mapping comment views in a hash to their parent node.")
+# saidit.features.create!(description: "Generously segmented views keep code DRY allowing login to share boilerplate form data and comments to be recursively rendered within parent.")
