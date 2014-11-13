@@ -70,7 +70,7 @@ asteroids = Project.create!(
   description: "Resurecting the classic arcade game with HTML5 Canvas & Javascript"
   github_url: "https://github.com/JohnMahowald/asteroids"
   demo_url: "http://www.johnmahowald.com/asteroids"
-  preview_img: ""
+  preview_img: "/assets/asteroids-preview.png"
 )
 
 asteroids.skills.create!(title: "JavaScript")
