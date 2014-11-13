@@ -12,20 +12,20 @@
     
       <div class='game-buttons active'>
       
-        <a href="#" class='play button'>Play</a>
-        <a href="#" class="instructions button">
+        <a href="javascript:void(0)" class='play button'>Play</a>
+        <a href="javascript:void(0)" class="instructions button">
           <span>Instructions</span>            
           <div class='instructions-container'>
             <div class='arrows-container clearfix'>
               <div class='arrows'>
-                <img src='img/arrow.svg' id='up'>
-                <img src='img/arrow.svg' id='down'>
+                <%= image_tag('arrow.svg', id: 'up') %>
+                <%= image_tag('arrow.svg', id: 'down') %>
                 <span>Ship Thrusters</span>
               </div>
         
               <div class='arrows'>
-                <img src='./img/arrow.svg' id='left'>
-                <img src='./img/arrow.svg' id='right'>
+                <%= image_tag('arrow.svg', id: 'left') %>
+                <%= image_tag('arrow.svg', id: 'right') %>
                 <span>Ship Direction</span>              
               </div>
             </div>
@@ -49,8 +49,8 @@
   
   playButton.onclick = function() {
     gameButtons.className = "game-buttons"
-    new window.Asteroids.GameView(canvasEl).start(); 
-  }
+    new window.Asteroids.GameView(canvasEl).start();
+  };
   
   var instructionButton = document.getElementsByClassName("instructions")[0]
   

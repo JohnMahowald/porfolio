@@ -65,6 +65,20 @@ node.skills.create!(title: 'Node.js')
 node.features.create!(description: "App launches a server establishing a connection to the client via an HTTP socket connection.")
 node.features.create!(description: "Client and server have unique parse methods for transmitting client messages from the client to the chatroom via the server.")
 
+asteroids = Project.create!(
+  title: "Asteroids",
+  description: "Resurecting the classic arcade game with HTML5 Canvas & Javascript"
+  github_url: "https://github.com/JohnMahowald/asteroids"
+  demo_url: "http://www.johnmahowald.com/asteroids"
+  preview_img: ""
+)
+
+asteroids.skills.create!(title: "JavaScript")
+asteroids.skills.create!(title: "HTML5 Canvas")
+
+asteroids.features.creaet!(description: "Sets prototypal inheritance for moving objects to follow JavaScript convention of safe inheritance.")
+asteroids.features.create!(description: "Vector math draws various shapes on the HTML 5 canvas and calculates object collions at 50 FPS.")
+
 # saidit = Project.create!(
 #   title: "Saidit",
 #   description: "A clone of Reddit posting user comments as recursive subviews",
