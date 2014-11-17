@@ -67,7 +67,7 @@ node.features.create!(description: "Client and server have unique parse methods 
 
 asteroids = Project.create!(
   title: "Asteroids",
-  description: "Resurecting the classic arcade game with HTML5 Canvas & Javascript",
+  description: "Resurrecting the classic arcade game with HTML5 Canvas & Javascript",
   github_url: "https://github.com/JohnMahowald/asteroids",
   demo_url: "http://www.johnmahowald.com/asteroids",
   preview_img: "/assets/asteroids-preview.png"
@@ -77,7 +77,7 @@ asteroids.skills.create!(title: "JavaScript")
 asteroids.skills.create!(title: "HTML5 Canvas")
 
 asteroids.features.create!(description: "Sets prototypal inheritance for moving objects to follow JavaScript convention of safe inheritance.")
-asteroids.features.create!(description: "Vector math draws various shapes on the HTML 5 canvas and calculates object collions at 50 FPS.")
+asteroids.features.create!(description: "Vector math draws various shapes on the HTML 5 canvas and calculates object collisions at 50 FPS.")
 
 # saidit = Project.create!(
 #   title: "Saidit",
