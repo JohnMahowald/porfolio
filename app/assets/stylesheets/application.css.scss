@@ -168,6 +168,10 @@ body {
   font-weight: normal;
 }
 
+#sidebar .sub-menu>li>a.active:hover {
+  background: linear-gradient(#808080, #5B5B5B);
+}
+
 #sidebar .sub-menu>li>a {
   list-style-image: url('/assets/star.svg');
 }
@@ -397,16 +401,12 @@ h1 {
   margin-bottom: 10px;
 }
 
-.section-card-body {
-}
-
 .project-preview {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 100%;
   width: 100%;
-/*  border-radius: 3px;*/
   -webkit-transition: all 0.30s ease-in-out;
   -moz-transition: all 0.30s ease-in-out;
   -ms-transition: all 0.30s ease-in-out;
@@ -447,7 +447,6 @@ h1 {
   width: 40%;
   color: white;
   background-color: #428bca;
-/*  background-color: #3071a9;*/
 }
 
 /* Skill Section */
@@ -463,10 +462,6 @@ h1 {
   font-weight: bold;
   margin-left: 10px;
   margin-right: 10px;
-}
-
-#skills {
-/*  height: 100px;*/
 }
 
 /* About */
