@@ -313,6 +313,21 @@ h1 {
   margin: 0;
 }
 
+.section-title>h1 {
+	display: inline-block;
+}
+
+.skill-subtext {
+	display: inline-block;
+	margin: 0;
+	margin-left: 35%;
+	font-size: 1.2em;
+	font-style: italic;
+	color: white;
+	opacity: .8;
+	font-weight: normal;
+}
+
 .main-section {
   width: 100%;
   min-height: 500px;

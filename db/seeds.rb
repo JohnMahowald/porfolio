@@ -34,8 +34,22 @@ annotate.skills.create!(title: 'Ruby on Rails')
 annotate.skills.create!(title: 'JavaScript')
 annotate.skills.create!(title: 'Backbone.js')
 
-annotate.features.create!(description: "Extends Backbone's View class allowing composite views to recursively render subviews within their parent")
-annotate.features.create!(description: "Creates an Animated View class to manage collections of jQuery and CSS methods making clean UI animation possible.")
+annotate.features.create!(description: "Custom composite view class extends Backbone's view class to accommodate nested subviews ensuring page content refreshes upon AJAX syncing without requiring hard refresh.")
+annotate.features.create!(description: "Each session assigns a new background image behind a custom javascript welcome message ensuring a unique & personalized user experience.")
+
+taskwise = Project.create!(
+  title: "Taskwise",
+  description: "A clone of the project management tool Trello using Ruby on Rails & Backbone.js",
+  github_url: "http://github.com/JohnMahowald/taskwise",
+  demo_url: "http://www.taskwise.org",
+  preview_img: "/assets/taskwise-preview.png"
+)
+taskwise.features.create!(description: "A Ruby on Rails REST API packages optimized JSON data with jbuilder for a custom client-side parse method to reduce the number of HTTP requests.")
+taskwise.features.create!(description: "Implements jQuery Sortable allowing cards to be dragged within lists and dragged to new lists, triggering ajax requests to persist new database relations.")
+
+taskwise.skills.create!(title: "Ruby on Rails")
+taskwise.skills.create!(title: "jQuery UI")
+taskwise.skills.create!(title: "Backbone.js")
 
 ros = Project.create!(
   title: "Ruby on Sails",
@@ -78,17 +92,3 @@ asteroids.skills.create!(title: "HTML5 Canvas")
 
 asteroids.features.create!(description: "Sets prototypal inheritance for moving objects to follow JavaScript convention of safe inheritance.")
 asteroids.features.create!(description: "Vector math draws various shapes on the HTML 5 canvas and calculates object collisions at 50 FPS.")
-
-# saidit = Project.create!(
-#   title: "Saidit",
-#   description: "A clone of Reddit posting user comments as recursive subviews",
-#   github_url: "http://github.com/JohnMahowald/saidit",
-#   demo_url:"http://saidit-reddit.herokuapp.com",
-#   preview_img: "/assets/saidit-preview.png"
-# )
-#
-# saidit.skills.create!(title: "Ruby on Rails")
-# saidit.skills.create!(title: "Recursive Partials")
-#
-# saidit.features.create!(description: "Recursive rendering of child comments by mapping comment views in a hash to their parent node.")
-# saidit.features.create!(description: "Generously segmented views keep code DRY allowing login to share boilerplate form data and comments to be recursively rendered within parent.")
