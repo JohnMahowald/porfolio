@@ -1,17 +1,11 @@
-section.asteroids-game {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  margin: 0;
-  background-color: black;
-}
-
 .clearfix:after {
-   visibility: hidden;
-   display: block;
-   font-size: 0;
-   content: " ";
-   clear: both;
-   height: 0;
- }
+ visibility: hidden;
+ display: block;
+ font-size: 0;
+ content: " ";
+ clear: both;
+ height: 0;
+}
  
 .clearfix { display: inline-block; }
 /* start commented backslash hack \*/
@@ -20,7 +14,9 @@ section.asteroids-game {
 /* close commented backslash hack */
 
 .game-display {
-  padding-top: 20px;
+	background-color: black;
+	height: 100%;
+	padding-top: 20px;
 }
 
 .game-display>h1 {
@@ -75,6 +71,7 @@ section.asteroids-game {
 
 .game-buttons {
   position: absolute;
+	color: white;
   top: 15%;
   left: 15%;
   width: 70%;
@@ -83,6 +80,21 @@ section.asteroids-game {
 
 .game-buttons.active {
   z-index: 1;
+}
+
+.high-scores {
+	width: 50%;
+	border: 1px solid white;
+	border-radius: 5px;
+	margin: 30px auto;
+	padding: 20px;
+}
+
+.high-scores>h3 {
+	font-family: 'Orbitron', Helvetica, sans-serif;
+	text-align: center;
+	margin: 0;
+	font-weight: normal;
 }
 
 .button {
@@ -176,4 +188,12 @@ section.asteroids-game {
   border: 1px solid #cacaca;
   display: block;
   margin-bottom: 15px;
+}
+
+.play-again {
+	display: none;
+}
+
+.play-again.active {
+	display: block;
 }

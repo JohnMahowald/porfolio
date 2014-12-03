@@ -1,61 +1,76 @@
-<section class='asteroids-game'>
-  <main class='game-display'>
-    <h1>Asteroids</h1>
-    <div class='window-container'>
-      <canvas id='game-canvas'></canvas>
-      <div class='score game-data'>
-        Score: <span id='score-count'>0</span>
-      </div>
-      <div class='lives game-data'>
-        Lives: <span id='life-count'>3</span>
-      </div>
+<main class='game-display clearfix'>
+  <h1>Asteroids</h1>
+  <div class='window-container'>
+    <canvas id='game-canvas'></canvas>
+    <div class='score game-data'>
+      Score: <span id='score-count'>0</span>
+    </div>
+    <div class='lives game-data'>
+      Lives: <span id='life-count'>3</span>
+    </div>
     
-      <div class='game-buttons active'>
+    <div id='new-game' class='game-buttons active'>
       
-        <a href="javascript:void(0)" class='play button'>Play</a>
-        <a href="javascript:void(0)" class="instructions button">
-          <span>Instructions</span>            
-          <div class='instructions-container'>
-            <div class='arrows-container clearfix'>
-              <div class='arrows'>
-                <%= image_tag('arrow.svg', id: 'up') %>
-                <%= image_tag('arrow.svg', id: 'down') %>
-                <span>Ship Thrusters</span>
-              </div>
-        
-              <div class='arrows'>
-                <%= image_tag('arrow.svg', id: 'left') %>
-                <%= image_tag('arrow.svg', id: 'right') %>
-                <span>Ship Direction</span>              
-              </div>
+      <a href="#" class='play button'>Play</a>
+      <a href="#" class="instructions button">
+        <span>Instructions</span>            
+        <div class='instructions-container'>
+          <div class='arrows-container clearfix'>
+            <div class='arrows'>
+              <img src='img/arrow.svg' id='up'>
+              <img src='img/arrow.svg' id='down'>
+              <span>Ship Thrusters</span>
             </div>
-            <div class='shoot'>
-              <div class='space-bar'>Space Bar</div>
-              Fire Bullets!
+        
+            <div class='arrows'>
+              <img src='./img/arrow.svg' id='left'>
+              <img src='./img/arrow.svg' id='right'>
+              <span>Ship Direction</span>              
             </div>
           </div>
-        </a>
-      </div>
+          <div class='shoot'>
+            <div class='space-bar'>Space Bar</div>
+            Fire Bullets!
+          </div>
+        </div>
+      </a>          
     </div>
-  </main>
-</section>
-    
+    <div id='restart-game' class='game-buttons'>
+      <a href='#' class='play-again active button'>Play Again?</a>
+    </div>
+  </div>
+</main>
+
 <script>
   var canvasEl = document.getElementById("game-canvas");
   canvasEl.height = window.innerHeight;
   canvasEl.width = window.innerWidth;
-  var playButton = document.getElementsByClassName("play")[0]
-  var gameButtons = document.getElementsByClassName("game-buttons")[0]
-  
-  playButton.onclick = function() {
-    gameButtons.className = "game-buttons"
-    new window.Asteroids.GameView(canvasEl).start();
-  };
-  
+  var playButton = document.getElementsByClassName("play")[0];
+  var gameButtons = document.getElementsByClassName("game-buttons")[0];
+  var restartMenu = document.getElementById("restart-game");
   var instructionButton = document.getElementsByClassName("instructions")[0]
+  var restartButton = document.getElementsByClassName("play-again")[0];
+        
+  playButton.onclick = function() { startGame() };
   
   instructionButton.onclick = function() {
     instructionButton.classList.toggle('open')
+  }
+  
+  restartButton.onclick = function() { startGame() };
+  
+  function startGame() {
+    gameButtons.className = "game-buttons"
+    restartMenu.className = "game-buttons"
+    new window.Asteroids.GameView(canvasEl).start(); 
+  }
+  
+  function promptGameOver() {
+    restartMenu.className += " active"
+  }
+  
+  if ($) {
+    $('.game-display').css("height", window.innerHeight)
   }
 </script>
   
@@ -67,5 +82,4 @@
 
   ga('create', 'UA-41735527-8', 'auto');
   ga('send', 'pageview');
-
 </script>
