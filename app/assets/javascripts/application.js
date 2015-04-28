@@ -13,6 +13,7 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery.scrollTo.min
+//= require jquery.stellar.min
 //= require jquery_ujs
 //= require set-dimensions
 //= require fixed-sidebar
@@ -48,4 +49,13 @@ $(document).ready(function() {
   $('#travel-link').mouseover( function() {
     $('#travel-link').tooltip('toggle');
   });
+
+  $("body").stellar({
+    hideDistantElements: false
+  });
+
+  $(".hero-title").addClass("visible");
+  $(".hero-role").addClass("visible");
+  $(".enter").addClass("visible");
 });
+
