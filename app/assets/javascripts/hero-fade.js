@@ -3,6 +3,7 @@ var HeroFade = function () {
   this.role = document.getElementsByClassName("hero-role")[0];
   this.bottomBorder = document.getElementById("main-row");
   this._registerListener();
+  this._addClass();
 }
 
 HeroFade.prototype.setOpacity = function () {
@@ -17,21 +18,26 @@ HeroFade.prototype.setOpacity = function () {
 
 HeroFade.prototype._registerListener = function () {
   window.onscroll = function () {
-    this.setOpacity();
+    window.requestAnimationFrame( function () {
+      this.setOpacity();
+    }.bind(this));
   }.bind(this);
 }
 
 HeroFade.prototype._calculateOpacity = function () {
   var gap = this.bottomBorder.offsetTop - window.scrollY;
 
-  // Opacity threshhold is 250 => 200
-  if (gap > 300) { return 1 };
+  // Opacity threshhold is 350 => 200
+  if (gap > 350) { return 1 };
   if (gap < 200) { return 0 };
-  return ((gap - 200) / 100)
+  return ((gap - 200) / 150)
 }
 
-
+HeroFade.prototype._addClass = function () {
+  this.title.classList.add("hero");
+  this.role.classList.add("hero");
+}
 
 setTimeout( function () {
   var f = new HeroFade();
-}, 20);
+}, 2000);
