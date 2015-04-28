@@ -17,6 +17,7 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "screens";
 
 $font-stack: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 $font-stack-1: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -44,77 +45,129 @@ body {
 }
 
 /* Landing Section */
-.title-wrapper>h1 {
-  text-align: center;
-}
-
-.title-wrapper>h1>a {
-  font-family: $font-stack-1;
-  font-size: 3em;
-  color: $main-grey;
-  opacity: .8;
-  transition: all .6s;
-  text-decoration: none;
-}
-
-.title-wrapper>h1>a:hover {
-  opacity: .9;
-}
-
-.title-wrapper>h2 {
-  font-size: 3em;
-  color: $main-grey;
-  opacity: .8;
-  transition: all .3s;
-  text-align: center;
-}
-
-.title-wrapper>h2:hover {
-  opacity: 1;
-}
-
-.main-nav-down {
-  text-align: center;
-}
-
-.main-nav-down a {
-  color: $main-grey;
-  transition: color .3s;
-}
-
-.main-nav-down a:hover {
-  color: $main-grey-hover;
-}
-.main-nav-down a>img {
-  width: 50px;
-  opacity: .6;
-  transition: all .7s;
-}
-
-.main-nav-down a>img:hover {
-  opacity: 1;
-}
 
 #title {
+  top: 0;
+  left: 0;
+  position: fixed;
   background-image: url('https://farm6.staticflickr.com/5535/11713436133_61f717d793_b.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-}
+  background-attachment: fixed;
+  overflow: auto;
+  height: 100vh;
 
-#title .fader {
-  height: 100%;
-  width: 100%;
-  background: rgba(246,246,246,0.35);
-  background: -moz-linear-gradient(top, rgba(246,246,246,0.35) 51%, rgba(246,246,246,0.35) 53%, rgba(255,255,255,1) 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(51%, rgba(246,246,246,0.35)), color-stop(53%, rgba(246,246,246,0.35)), color-stop(100%, rgba(255,255,255,1)));
-  background: -webkit-linear-gradient(top, rgba(246,246,246,0.35) 51%, rgba(246,246,246,0.35) 53%, rgba(255,255,255,1) 100%);
-  background: -o-linear-gradient(top, rgba(246,246,246,0.35) 51%, rgba(246,246,246,0.35) 53%, rgba(255,255,255,1) 100%);
-  background: -ms-linear-gradient(top, rgba(246,246,246,0.35) 51%, rgba(246,246,246,0.35) 53%, rgba(255,255,255,1) 100%);
-  background: linear-gradient(to bottom, rgba(246,246,246,0.35) 51%, rgba(246,246,246,0.35) 53%, rgba(255,255,255,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', endColorstr='#ffffff', GradientType=0 );
+  .hero-title, .hero-role {
+    position: fixed;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-family: $font-stack-1;
+    color: $main-grey;
+    left: 0;
+    right: 0;
+    top: 35vh;
+    text-decoration: none;
+    opacity: .7;
+  }
+
+  .hero-title {
+    font-size: 6em;
+    transform: translateY(30px);
+    opacity: 0;
+    
+    &.visible {
+      opacity: 1;
+      transform: translateY(-30px);
+      transition: opacity 1.0s ease-in-out, transform .8s ease-in-out;
+      transition-delay: .2s;
+
+      &.hero {
+        transition: none
+      }
+    }
+  }
+
+  .hero-role {
+    top: 55vh;
+    font-size: 2em;
+    opacity: 0;
+    transform: translateY(-30px);
+
+    &.visible {
+      opacity: 1;
+      transform: translateY(20px);
+      transition: opacity 1.0s ease-in-out, transform .4s ease-in-out;
+      transition-delay: 0.9s;
+
+      &.hero {
+        transition: none;
+      }
+    }
+  }
+
+  @include medium-screen {
+    .hero-title {
+      font-size: 4em;
+    }
+
+    .hero-role {
+      font-size: 2em;
+    }
+  }
+
+  @include small-screen {
+    .hero-title {
+      font-size: 3em;
+    }
+
+    .hero-role {
+      font-size: 1em;
+    }
+  }
+
+  .enter {
+    background-image: url(image_path("nav-down.svg"));
+    background-repeat: no-repeat;
+    background-size: 60px;
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(0);
+    transition: opacity 1.5s ease, transform .4s ease;
+    transition-delay: 1s;
+
+    &.visible {
+      opacity: .6;
+      transform: translateY(-25px);
+    }
+  }
+
+  .background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(246,246,246,0.35);
+    background: -moz-linear-gradient(top, rgba(246,246,246,0.35) 51%, rgba(246,246,246,0.35) 53%, rgba(255,255,255,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(51%, rgba(246,246,246,0.35)), color-stop(53%, rgba(246,246,246,0.35)), color-stop(100%, rgba(255,255,255,1)));
+    background: -webkit-linear-gradient(top, rgba(246,246,246,0.35) 51%, rgba(246,246,246,0.35) 53%, rgba(255,255,255,1) 100%);
+    background: -o-linear-gradient(top, rgba(246,246,246,0.35) 51%, rgba(246,246,246,0.35) 53%, rgba(255,255,255,1) 100%);
+    background: -ms-linear-gradient(top, rgba(246,246,246,0.35) 51%, rgba(246,246,246,0.35) 53%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(to bottom, rgba(246,246,246,0.35) 51%, rgba(246,246,246,0.35) 53%, rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', endColorstr='#ffffff', GradientType=0 );
+  }
 }
 
 /* Sidebar Styling */
+
+body>.container-fluid {
+  margin-top: 100vh;
+}
 .text-center {
   padding-top: 20px;
 }
@@ -123,7 +176,7 @@ body {
 }
 
 #sidebar {
-  height: 100%;
+  height: 100vh;
   padding-right: 0;
   padding-top: 20px;
   background-color: $main-grey;
@@ -360,6 +413,7 @@ h1 {
 }
 
 .section-card {
+  height: 400px;
   position: relative;
   border: 1px solid #cacaca;
   border-radius: 3px;
