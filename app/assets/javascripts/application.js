@@ -15,7 +15,6 @@
 //= require jquery.scrollTo.min
 //= require jquery.stellar.min
 //= require jquery_ujs
-//= require set-dimensions
 //= require fixed-sidebar
 //= require scroll
 //= require set-menu
